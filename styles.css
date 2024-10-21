@@ -10,6 +10,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    grid-gap:10px;
     align-items: center;
     padding: 20px;
     background: linear-gradient(135deg, #004d7f, #0094e5);
@@ -19,7 +20,8 @@ header {
 
 .logo img {
     height: 160px;
-    width:200px;
+    border-radius:20px;
+    width:150px;
     transition: transform 0.3s;
 }
 
