@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -7,10 +8,11 @@ body {
     animation: fadeIn 1s;
 }
 
+/* Header Styles */
 header {
     display: flex;
     justify-content: space-between;
-    grid-gap:10px;
+    grid-gap: 10px;
     align-items: center;
     padding: 20px;
     background: linear-gradient(135deg, #004d7f, #0094e5);
@@ -20,8 +22,8 @@ header {
 
 .logo img {
     height: 160px;
-    border-radius:20px;
-    width:150px;
+    width: 150px;
+    border-radius: 20px;
     transition: transform 0.3s;
 }
 
@@ -70,10 +72,12 @@ nav ul li a:hover {
     text-shadow: 0 0 5px #ffd700;
 }
 
+/* Main Section Styles */
 main {
     padding: 20px;
 }
 
+/* Stall Section */
 .stall-container {
     display: flex;
     flex-wrap: wrap;
@@ -107,6 +111,7 @@ main {
     opacity: 1; /* Make it fully opaque on hover */
 }
 
+/* Footer Styles */
 footer {
     text-align: center;
     padding: 20px;
@@ -128,6 +133,7 @@ footer {
     to { transform: translateY(0); opacity: 1; }
 }
 
+/* Form Styles */
 form {
     transition: transform 0.3s;
 }
@@ -143,12 +149,19 @@ button {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
     background-color: #005f8f;
+    transform: scale(1.05); /* Slightly scale on hover */
 }
+
+button:active {
+    transform: scale(0.95); /* Scale down on click */
+}
+
+/* Contact Section */
 #contact {
     padding: 40px 20px;
     background: #f0f4f8; /* Match with overall theme */
@@ -191,24 +204,7 @@ textarea {
     min-height: 100px; /* Minimum height for the textarea */
 }
 
-button {
-    background-color: #007bb8;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-button:hover {
-    background-color: #005f8f;
-    transform: scale(1.05); /* Slightly scale on hover */
-}
-
-button:active {
-    transform: scale(0.95); /* Scale down on click */
-}
+/* About Section */
 #about {
     padding: 40px 20px;
     background: #e1f5fe; /* Light blue background */
@@ -221,6 +217,7 @@ button:active {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    animation: fadeInUp 1s forwards; /* Animation for the section */
 }
 
 .about-card {
@@ -246,76 +243,7 @@ button:active {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Animation for the entire section */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.about-container {
-    animation: fadeInUp 1s forwards;
-}
-#stalls {
-    padding: 40px 20px;
-    background: #f9fbe7; /* Light green background */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin: 20px 0;
-}
-
-.stall-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.stall-card {
-    background: #ffffff; /* White background for cards */
-    border: 2px solid #4caf50; /* Green border */
-    border-radius: 10px;
-    margin: 20px;
-    padding: 20px;
-    width: 250px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-}
-
-.stall-card h3 {
-    margin-top: 0;
-    color: #4caf50; /* Green heading */
-}
-
-.stall-card p {
-    color: #555;
-}
-
-.stall-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Animation for the entire section */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.stall-container {
-    animation: fadeInUp 1s forwards;
-}
+/* Exhibition Section */
 #exhibition {
     padding: 40px 20px;
     background: url('path/to/shree-yantra-background.jpg') no-repeat center center; /* Add your Shree Yantra image path */
@@ -330,6 +258,7 @@ button:active {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    animation: fadeInUp 1s forwards; /* Animation for the section */
 }
 
 .exhibition-card {
@@ -356,11 +285,83 @@ button:active {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Animation for the entire section */
-@keyframes fadeInUp {
+/* Modal for displaying stall info */
+/* Modal for displaying stall info */
+.stall-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: white;
+    padding: 30px 20px; /* Added horizontal padding */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 600px;
+    z-index: 1000;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    text-align: center;
+    overflow-y: auto;
+    max-height:80vh;
+}
+
+.stall-modal.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.stall-modal h2 {
+    margin-top: 0;
+    color: #4caf50; /* Green color */
+}
+
+.stall-modal p {
+    color: #333;
+}
+
+.stall-modal .close-btn {
+    background-color: #ff5e5e;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute; /* Changed to absolute */
+    top: 15px; /* Adjusted distance from the top */
+    right: 15px; /* Positioned to the right */
+}
+
+.stall-modal .close-btn:hover {
+    background-color: #e60000;
+}
+
+
+/* Overlay for dimming the background when modal is active */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    z-index: 999;
+    transition: opacity 0.3s ease;
+    visibility: hidden;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Animation for the detailed info inside the modal */
+@keyframes modalFadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
@@ -368,6 +369,16 @@ button:active {
     }
 }
 
-.exhibition-container {
-    animation: fadeInUp 1s forwards;
+.stall-info {
+    animation: modalFadeIn 0.6s forwards;
+}
+
+/* Close Button Styles */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #007bb8;
 }
