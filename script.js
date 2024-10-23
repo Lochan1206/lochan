@@ -86,11 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'Math Games are interactive activities that make learning mathematics fun. Examples include Math Bingo, online math puzzles, card games like "Math War," board games like "Monopoly," and escape room challenges. They reinforce math skills while promoting critical thinking and teamwork.',
             image: 'st9.png'
         },
-        'Stall 3: Renewable Energy': {
-            description: 'Renewable energy is energy derived from natural sources that are replenished at a higher rate than they are consumed. Sunlight and wind, for example, are such sources that are constantly being replenished.',
-            image: 'st3.png'
+        'Stall 10: Coding for Kids': {
+            description: 'Coding for kids refers to teaching children the fundamentals of programming in a fun and engaging way. It helps develop problem-solving skills, creativity, and logical thinking from an early age. Children can start with visual programming languages like Scratch, which allows them to drag and drop blocks to create animations, games, and stories. As they progress, they can learn more advanced languages like Python, JavaScript, or HTML.Introducing coding early fosters an interest in technology and innovation, preparing children for a digital future. It also enhances critical thinking, collaboration, and communication skills as they learn to break down complex problems into smaller, manageable tasks.',
+            image: 'st10.jpg'
         },
-        'Stall 3: Renewable Energy': {
+        'Stall 11: Environmental Science': {
             description: 'Renewable energy is energy derived from natural sources that are replenished at a higher rate than they are consumed. Sunlight and wind, for example, are such sources that are constantly being replenished.',
             image: 'st3.png'
         },
@@ -166,3 +166,14 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         }, 2000);
     }, 1500); // Simulate a delay for sending the message
 });
+
+//team model display
+const modal = document.createElement('div');
+const overlay = document.createElement('div');
+modal.classList.add('team-modal');
+overlay.classList.add('modal-overlay');
+document.body.appendChild(modal);
+document.body.appendChild(overlay);
+
+
+
