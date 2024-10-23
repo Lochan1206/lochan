@@ -285,6 +285,15 @@ textarea {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
+.bg{
+    background-image:url("scii.png");
+background-attachment:fixed;
+width:auto;
+height:300px;
+margin:15px;
+
+}
+
 /* Modal for displaying stall info */
 /* Modal for displaying stall info */
 .stall-modal {
