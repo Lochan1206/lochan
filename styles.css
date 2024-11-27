@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: #eaeff1; /* Light background for contrast */
+    background: #eaeff1; 
     animation: fadeIn 1s;
 }
 
@@ -12,7 +12,6 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    grid-gap: 10px;
     align-items: center;
     padding: 20px;
     background: linear-gradient(135deg, #004d7f, #0094e5);
@@ -21,8 +20,8 @@ header {
 }
 
 .logo img {
-    height: 160px;
-    width: 150px;
+    height: 120px;
+    width: 110px;
     border-radius: 20px;
     transition: transform 0.3s;
 }
@@ -78,19 +77,19 @@ main {
 }
 
 /* Stall Section */
-.stall-container {
+.stall-container, .about-container, .exhibition-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-wrap: wrap; /* Ensure the child elements wrap properly on small screens */
+    justify-content: space-around; /* Evenly space the items */
 }
 
-.stall-card {
-    background: #f0f4f8; /* Soft light color */
+.stall-card, .about-card, .exhibition-card {
+    width: 250px; 
+    margin: 10px;
+    padding: 20px;
+    background: #f0f4f8;
     border: 2px solid #0094e5;
     border-radius: 10px;
-    margin: 20px;
-    padding: 20px;
-    width: 250px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     display: flex;
@@ -99,21 +98,23 @@ main {
     opacity: 0.9;
 }
 
-.stall-card img {
+.stall-card img, .about-card img, .exhibition-card img {
     max-width: 100%;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
-.stall-card:hover {
+.stall-card:hover, .about-card:hover, .exhibition-card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    opacity: 1; /* Make it fully opaque on hover */
+    opacity: 1; 
 }
 
 /* Footer Styles */
 footer {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
     background: linear-gradient(135deg, #004d7f, #0094e5);
     color: #fff;
@@ -154,18 +155,17 @@ button {
 
 button:hover {
     background-color: #005f8f;
-    transform: scale(1.05); /* Slightly scale on hover */
+    transform: scale(1.05); 
 }
 
 button:active {
-    transform: scale(0.95); /* Scale down on click */
+    transform: scale(0.95); 
 }
 
 /* Contact Section */
 #contact {
     padding: 40px 20px;
-    background: #f0f4f8; /* Match with overall theme */
-    border-radius: 10px;
+    background: #f0f4f8; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     margin: 20px 0;
 }
@@ -201,13 +201,13 @@ input:focus, textarea:focus {
 
 textarea {
     resize: vertical;
-    min-height: 100px; /* Minimum height for the textarea */
+    min-height: 100px; 
 }
 
 /* About Section */
 #about {
     padding: 40px 20px;
-    background: #e1f5fe; /* Light blue background */
+    background: #e1f5fe; 
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     margin: 20px 0;
@@ -217,11 +217,11 @@ textarea {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    animation: fadeInUp 1s forwards; /* Animation for the section */
+    animation: fadeInUp 1s forwards; 
 }
 
 .about-card {
-    background: #ffffff; /* White background for cards */
+    background: #ffffff; 
     border-radius: 10px;
     margin: 20px;
     padding: 20px;
@@ -246,7 +246,7 @@ textarea {
 /* Exhibition Section */
 #exhibition {
     padding: 40px 20px;
-    background: url('path/to/shree-yantra-background.jpg') no-repeat center center; /* Add your Shree Yantra image path */
+    background: url('path/to/shree-yantra-background.jpg') 
     background-size: cover;
     color: #090505;
     border-radius: 10px;
@@ -258,11 +258,11 @@ textarea {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    animation: fadeInUp 1s forwards; /* Animation for the section */
+    animation: fadeInUp 1s forwards; 
 }
 
 .exhibition-card {
-    background: rgba(40, 179, 203, 0.308); /* Semi-transparent white for readability */
+    background: rgba(40, 179, 203, 0.308); 
     border-radius: 10px;
     margin: 20px;
     padding: 20px;
@@ -285,24 +285,22 @@ textarea {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-.bg{
-    background-image:url("scii.png");
-background-attachment:fixed;
-width:auto;
-height:300px;
-margin:15px;
-
+.bg {
+    background-image: url("scii.png");
+    background-attachment: fixed;
+    width: auto;
+    height: 300px;
+    margin: 15px;
 }
 
-/* Modal for displaying stall info */
-/* Modal for displaying stall info */
+
 .stall-modal {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     background-color: white;
-    padding: 30px 20px; /* Added horizontal padding */
+    padding: 30px 20px; 
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     width: 80%;
@@ -310,84 +308,44 @@ margin:15px;
     z-index: 1000;
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    text-align: center;
-    overflow-y: auto;
-    max-height:80vh;
 }
 
-.stall-modal.active {
+.stall-modal.open {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
 
-.stall-modal h2 {
-    margin-top: 0;
-    color: #4caf50; /* Green color */
-}
-
-.stall-modal p {
-    color: #333;
-}
-
-.stall-modal .close-btn {
-    background-color: #ff5e5e;
-    border: none;
-    color: white;
-    padding: 10px 20px;
+.stall-modal-content {
+    padding: 10px;
+    background-color: #f7f7f7;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    position: absolute; /* Changed to absolute */
-    top: 15px; /* Adjusted distance from the top */
-    right: 15px; /* Positioned to the right */
 }
 
-.stall-modal .close-btn:hover {
-    background-color: #e60000;
-}
-
-
-/* Overlay for dimming the background when modal is active */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    z-index: 999;
-    transition: opacity 0.3s ease;
-    visibility: hidden;
-}
-
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Animation for the detailed info inside the modal */
-@keyframes modalFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.stall-info {
-    animation: modalFadeIn 0.6s forwards;
-}
-
-/* Close Button Styles */
-.close-btn {
+.stall-modal-close {
     position: absolute;
     top: 10px;
-    right: 15px;
+    right: 10px;
     font-size: 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
     cursor: pointer;
-    color: #007bb8;
+    border-radius: 5px;
+}
+
+.stall-modal-close:hover {
+    background-color: #ff1a1a;
+}
+
+@media screen and (max-width: 768px) {
+    .stall-card, .about-card, .exhibition-card {
+        width: 45%; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .stall-card, .about-card, .exhibition-card {
+        width: 90%;
+    }
 }
