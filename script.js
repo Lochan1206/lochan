@@ -1,3 +1,24 @@
+
+ document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();  // Prevents the default form submission
+
+        var formData = new FormData(this);  // Collect form data
+
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Show success message
+            alert("Thank you for submitting form");
+        })
+        .catch(error => {
+            // Show error message
+            alert("There was an error submitting the form: " + error);
+        });
+    });
+
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const options = {
